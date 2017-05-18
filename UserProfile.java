@@ -16,7 +16,12 @@ public class UserProfile implements Serializable
         this.tagName = tagName;
         this.email = email;
     }
+<<<<<<< HEAD
+
+	public String toString()
+=======
     public String toString()
+>>>>>>> origin/master
     {
         return tagName + " " + email;
     }
@@ -38,11 +43,19 @@ public class UserProfile implements Serializable
             fout = new FileOutputStream("c:\\profile.ser", true);
             oos = new ObjectOutputStream(fout);
             oos.writeObject(this);
+<<<<<<< HEAD
+        } catch (Exception ex) {} 
+        finally {
+            if(oos != null){
+                try {oos.close();} catch (Exception e) {}
+            } 
+=======
         } catch (Exception ex) {}
         finally {
             if(oos != null){
                 try {oos.close();} catch (Exception e) {}
             }
+>>>>>>> origin/master
         }
     }
     
@@ -60,11 +73,19 @@ public class UserProfile implements Serializable
             
 //            this.tagName = temp.gettagName();
 //            this.email = temp.getemail();
+<<<<<<< HEAD
+        } catch (Exception ex) {} 
+        finally {
+            if(ois != null){
+                try {ois.close();} catch (Exception e) {}
+            } 
+=======
         } catch (Exception ex) {}
         finally {
             if(ois != null){
                 try {ois.close();} catch (Exception e) {}
             }
+>>>>>>> origin/master
         }
         
         return temp;

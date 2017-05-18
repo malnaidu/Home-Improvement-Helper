@@ -2,6 +2,7 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -23,28 +24,27 @@ public class HIH_UI {
 
 	private final JMenu myMenu;
 	
-	private final JMenu myMenu2;
+	private final JMenu optionsMenu;
 	
 	private final JMenu myMenu3;
 
-	private final JMenuItem myMenuItem;
+	private final JMenuItem aboutMenu;
 	
-	private final JButton newProject;
+	private final JButton newProjectButton;
 	
-	private final JPanel myPanel;
+	private final JPanel homePanel;
 
 	public HIH_UI() {
 		myFrame = new JFrame();
 		myMenuBar = new JMenuBar();
 		myMenu = new JMenu("Home");
-		myMenu2 = new JMenu("Options");
-		myMenuItem = new JMenuItem("About");
+		optionsMenu = new JMenu("Options");
+		aboutMenu = new JMenuItem("About");
 		myMenu3 = new JMenu("Compare Projects");
-		myPanel = new JPanel();
-        myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.Y_AXIS));
-		newProject = new JButton("New Project + ");
-		
-
+		homePanel = new JPanel();
+        homePanel.setLayout(new BoxLayout(homePanel, BoxLayout.Y_AXIS));
+        homePanel.add(Box.createRigidArea(new Dimension(125, 200)));
+		newProjectButton = new JButton("New Project + ");		
 	}
 
 	public void start() {
@@ -52,19 +52,19 @@ public class HIH_UI {
 		myFrame.setSize(INITIAL_SIZE);
 		myFrame.setMinimumSize(MIN_SIZE);
 		myFrame.setLocationRelativeTo(null);
-		myFrame.add(myPanel);
-		myPanel.add(newProject);
+		myFrame.add(homePanel);
+		homePanel.add(newProjectButton);
 		myMenuBar.add(myMenu);
-		myMenuBar.add(myMenu2);
+		myMenuBar.add(optionsMenu);
 		myMenuBar.add(myMenu3);
-		myMenu2.add(myMenuItem);
+		optionsMenu.add(aboutMenu);
 		setupAbout();
 		myFrame.setJMenuBar(myMenuBar);
 		myFrame.setVisible(true);
 	}
 
 	private void setupAbout() {
-    	myMenuItem.addActionListener(new ActionListener() {
+    	aboutMenu.addActionListener(new ActionListener() {
     		public void actionPerformed(final ActionEvent theEvent) {
     			JOptionPane.showMessageDialog(myFrame, "We are "
     					+ "team Light Olive Green\nTravis Bain \"Tora\"\n"
