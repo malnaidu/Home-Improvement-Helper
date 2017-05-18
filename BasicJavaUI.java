@@ -34,6 +34,8 @@ public final class BasicJavaUI
 	private final JPanel myLogin;
 	
 	private int successCount = 0;
+	
+	private List<Data> dataList = new ArrayList<Data>();
 
 	public BasicJavaUI()
 	{
@@ -42,7 +44,7 @@ public final class BasicJavaUI
 		myMenu = new JMenu("Options");
 		myMenuItem = new JMenuItem("About");
 		myLogin = new JPanel();
-
+		dataList = new ArrayList<Data>();
 	}
 
 	public void start()
@@ -59,13 +61,18 @@ public final class BasicJavaUI
 		myFrame.setJMenuBar(myMenuBar);
 		login();
 		myFrame.setVisible(true);
+		
+        UserProfile importedProfile = new UserProfile("", "");
+        importedProfile = importedProfile.importData();     
+        System.out.println("Name: " + importedProfile.gettagName() + "\nEmail: " + importedProfile.getemail());
 	}
 
 	public void dataStore(String name, String email)
 	{
-		List<Data> dataList = new ArrayList<Data>();
 		Data newEntry = new Data(name, email);
 		dataList.add(newEntry);
+        UserProfile myProfile = new UserProfile(name, email);
+        myProfile.export();
 	}
 
 	public void login()
