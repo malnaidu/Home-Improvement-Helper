@@ -14,14 +14,8 @@ public class Import_Export {
         UserProfile myProfile = new UserProfile("Fred","fredflintstone@bedrock.com");
         myProfile.export();
         
-<<<<<<< HEAD
         UserProfile importedProfile = new UserProfile("", "");
-        
-        importedProfile = importedProfile.importData();
-=======
-        UserProfile importedProfile = myProfile.importData();
->>>>>>> origin/master
-        
+        importedProfile = importedProfile.importData();     
         System.out.println("Name: " + importedProfile.gettagName() + "\nEmail: " + importedProfile.getemail());
     }
 }
