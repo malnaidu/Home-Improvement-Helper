@@ -59,17 +59,24 @@ public class Login extends Application {
         final Text actiontarget = new Text();
         grid.add(actiontarget,1,6);
 
+
+        // to show that the submit button occured
+
         btn.setOnAction(event ->
         {
             actiontarget.setFill(Color.BLACK);
             actiontarget.setText("Sign in button pressed");
 
         });
+
         scene.getStylesheets().
                 add(Login.class.getResource("Login.css").toExternalForm());
         primaryStage.setTitle("Home Improvement Helper");
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        primaryStage.setResizable(false);
+
     }
 
     /**

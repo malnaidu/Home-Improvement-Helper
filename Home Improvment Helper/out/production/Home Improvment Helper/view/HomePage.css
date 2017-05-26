@@ -24,3 +24,7 @@
     -fx-background-color:linear-gradient(#61a2b1,#2A5058);
 
 }
+
+button1 {
+    -fx-font: 22 arial; -fx-base: #b6e7c9;
+}

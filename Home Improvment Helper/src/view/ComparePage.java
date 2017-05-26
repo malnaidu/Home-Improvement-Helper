@@ -29,6 +29,8 @@ public class ComparePage extends Application{
         primaryStage.setTitle("Home Improvement Helper");
         primaryStage.setScene(sceneComparePage);
         primaryStage.show();
+
+        //figure out how to display each project
     }
 
     /**
