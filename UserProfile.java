@@ -1,3 +1,5 @@
+package view;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -8,28 +10,28 @@ import java.io.Serializable;
 // you can add other public classes to this editor in any order
 public class UserProfile implements Serializable
 {
-    private String tagName;
-    private String email;
+    private String username;
+    private String password;
     
-    public UserProfile(String tagName, String email)
+    public UserProfile(String username, String password)
     {
-        this.tagName = tagName;
-        this.email = email;
+        this.username = username;
+        this.password = password;
     }
     
     public String toString()
     {
-        return tagName + " " + email;
+        return username + " " + password;
     }
     
-    public String gettagName()
+    public String getUsername()
     {
-        return tagName;
+        return username;
     }
     
-    public String getemail()
+    public String getPassword()
     {
-        return email;
+        return password;
     }
 
     public void export () {
